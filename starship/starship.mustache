@@ -7,6 +7,7 @@ $directory\
 $git_branch\
 $git_status\
 $git_metrics\
+$git_state\
 [](fg:{{colors.bg_3}} bg:{{colors.bg_4}})\
 $nodejs\
 $rust\
@@ -49,6 +50,10 @@ added_style = "fg:bold green bg:{{colors.bg_3}}"
 deleted_style = "fg:bold red bg:{{colors.bg_3}}"
 format = '[([+$added]($added_style)) ([-$deleted]($deleted_style))](bg:{{colors.bg_3}})'
 disabled=false
+
+[git_state]
+style = "bg:{{colors.bg_3}}"
+format='\([$state( $progress_current/$progress_total)]($style)\) '
 
 [nodejs]
 symbol = ""
