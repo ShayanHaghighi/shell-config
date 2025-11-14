@@ -1,6 +1,8 @@
 format = """
 [░▒▓]({{colors.bg_1}})\
 [ 󰏚 ](fg:#090c0c bg:{{colors.bg_1}} )\
+$sudo\
+$username\
 []( fg:{{colors.bg_1}} bg:{{colors.bg_2}})\
 $directory\
 [](fg:{{colors.bg_2}} bg:{{colors.bg_3}})\
@@ -14,11 +16,17 @@ $rust\
 $golang\
 $php\
 $python\
-[](fg:{{colors.bg_4}} bg:{{colors.bg_5}})\
-$time\
-[](fg:{{colors.bg_5}} )\
-  $cmd_duration
+$fill\
+[](fg:{{colors.bg_5}} )\
+$cmd_duration\
+   $time\
 \n$character"""
+
+[sudo]
+style="fg:#090c0c bg:{{colors.bg_1}}"
+disabled=false
+format='([$symbol]($style))'
+symbol=''
 
 [directory]
 style = "fg:#090c0c bg:{{colors.bg_2}}"
@@ -53,7 +61,7 @@ disabled=false
 
 [git_state]
 style = "bg:{{colors.bg_3}}"
-format='\([$state( $progress_current/$progress_total)]($style)\) '
+format='[ \($state( $progress_current/$progress_total)\)]($style)'
 
 [nodejs]
 symbol = ""
@@ -69,6 +77,9 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:{{colors.bg_4}})]($style)'
 symbol = ""
 style = "bg:{{colors.bg_4}}"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:{{colors.bg_4}})]($style)'
+
+[fill]
+symbol = ' '
 
 [php]
 symbol = ""
@@ -91,5 +102,5 @@ format = '[[  $time ](fg:#a0a9cb bg:{{colors.bg_5}})]($style)'
 show_milliseconds=true
 min_time=500
 disabled=false
-style='bold fg:#a0a9cb'
+style='bold fg:#767d99'
 format='[\(($duration)\)]($style)'
