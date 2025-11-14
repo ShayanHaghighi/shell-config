@@ -6,6 +6,20 @@ recursive=false
 interactive=false
 dir="."
 
+get_preview(){
+    local name="$1"
+    if [[ "$name" == "EXIT (quit)" ]]; then
+        echo "This will exit the program"
+    elif [[ -d "$name" ]]; then
+        echo "$(eza -lah --color=always $name)"
+    else
+        echo  "$(batcat --color=always $name --style=plain --paging=never)"
+    fi
+
+}
+
+export -f get_preview
+
 while (( "$#" )); do
     case "$1" in
         -a) show_all=true ;;
@@ -27,7 +41,7 @@ if [ "$interactive" = "false" ]; then
             --preview-window 'right:70%,nowrap' \
             --ansi \
             --reverse \
-        --preview '[[ -d {} ]] && eza -lah --color=always  {} || batcat --color=always {} --style=plain --paging=never') || return
+        --preview 'get_preview {}') || return
 
     if [ -z "$target" ]; then
         return
@@ -50,7 +64,7 @@ else
                 --reverse \
                 --ansi \
                 --preview-window 'right:70%,nowrap' \
-                --preview '[[ -d {} ]] && eza -lah --color=always {} || batcat --color=always {} --style=plain --paging=never'
+                --preview 'get_preview {}'
         ) || break  # if fzf is canceled
 
         # handle special selections

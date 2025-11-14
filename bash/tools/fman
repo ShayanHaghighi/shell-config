@@ -1,0 +1,18 @@
+if [ -z "$1" ]; then
+    echo "Usage: manfzf <man_page_name>"
+    echo "Example: manfzf git"
+    return 1
+fi
+
+man_page="$1"
+
+echo "Loading man page for '$man_page'..."
+
+man "$man_page" | grep -E '[ ]{2}([0-9\?-]|[A-Z]{2})' | col -bx | fzf \
+    --tiebreak=begin,length \
+    --ansi \
+    --prompt="Search Flags/EnvVars: " \
+    --preview-window 'right:50%,wrap' \
+    --preview "man '$man_page' | col -bx | grep -A  $(if [ $LINES ]; then echo $LINES; else echo 50; fi) --color=always -F {}" \
+    --bind "enter:execute(man '$man_page' | less +/{})"
+

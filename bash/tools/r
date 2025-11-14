@@ -1,0 +1,2 @@
+eval "$@ &> /dev/null & disown"
+echo "$!"
