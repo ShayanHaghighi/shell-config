@@ -136,17 +136,18 @@ return {
 
   {
     "HiPhish/nvim-ts-rainbow2",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    config = function()
-      require("nvim-treesitter.configs").setup({
-        highlight = { enable = true },
-        rainbow = {
-          enable = true,
-          strategy = require("ts-rainbow.strategy.global"),
-          query = { "rainbow-parens", html = "rainbow-tags" },
-        },
-      })
-    end,
+    -- dependencies = { "nvim-treesitter/nvim-treesitter" },
+    -- config = function()
+    --   require("nvim-treesitter.configs").setup({
+    --     --[[ highlight = { enable = true }, ]]
+    --     rainbow = {
+    --       enable = true,
+    --       strategy = require("ts-rainbow").strategy.global,
+    --       -- query = { "rainbow-parens", html = "rainbow-tags" },
+    --       query = "rainbow-parens",
+    --     },
+    --   })
+    -- end,
   },
 
   {
@@ -157,6 +158,7 @@ return {
       scope = { enabled = true },
     },
   },
+
   {
     "stevearc/conform.nvim",
     opts = {

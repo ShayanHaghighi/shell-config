@@ -10,7 +10,7 @@ map("n", "<leader>v", ":vsplit<CR>", { desc = "Vertical Split" })
 map("n", "<leader>h", ":split<CR>", { desc = "Horizontal Split" })
 map("n", "<C-t>", ":tabnew<CR>", { desc = "New Tab" })
 map("n", "<C-s>", ":w<CR>", { desc = "Save" })
-map("n", "<C-w>", ":wq<CR>", { desc = "Close Tab" })
+map("n", "<leader>q", ":wqa<CR>", { desc = "Close Tab" })
 -- TODO: is this the correct way to do new tabs?
 
 -- Enable mouse in all modes
@@ -30,3 +30,5 @@ vim.api.nvim_set_keymap(
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set({ "n", "x" }, "gp", '"+p', { desc = "paste from clipboard" })
+vim.keymap.set({ "n", "x" }, "gy", '"+y', { desc = "copy to clipboard" })

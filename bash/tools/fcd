@@ -41,14 +41,14 @@ if [ "$interactive" = "false" ]; then
             --preview-window 'right:70%,nowrap' \
             --ansi \
             --reverse \
-        --preview 'get_preview {}') || return
+        --preview 'get_preview {}') || exit
 
     if [ -z "$target" ]; then
         return
     elif [ -d "$target" ]; then
         cd "$target" || return
     else
-        cd "$(dirname "$target")" && nano "$target" || return
+        cd "$(dirname "$target")" && nano "$target" || exit
     fi
 
 else

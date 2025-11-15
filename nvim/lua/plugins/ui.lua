@@ -3,7 +3,6 @@ return {
     "nvim-tree/nvim-tree.lua",
     config = function()
       local nvim_tree = require("nvim-tree")
-
       local function on_attach(bufnr)
         local api = require("nvim-tree.api")
 
@@ -98,12 +97,13 @@ return {
       require("lualine").setup({ options = { theme = "auto" } })
     end,
   }, -- nvim status line
-  { -- theme
-    "folke/tokyonight.nvim",
+  {
+    "catppuccin/nvim",
     lazy = false,
+    name = "catppuccin",
     priority = 1000,
     config = function()
-      vim.cmd([[colorscheme tokyonight]])
+      vim.cmd("colorscheme catppuccin-mocha")
     end,
   },
   { -- bufferlines (tabs)
