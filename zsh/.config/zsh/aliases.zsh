@@ -16,7 +16,7 @@ alias fcda='fcd -a'
 alias python=python3
 alias ...='cd ../..'
 alias webstorm='gtk-launch webstorm.desktop'
-alias idea='/home/shayan/Apps/idea-IU-252.27397.103/bin/idea'
+alias idea="$HOME/Apps/idea-IU-252.27397.103/bin/idea"
 alias copy='xclip -selection clipboard'
 alias fd="fdfind"
 

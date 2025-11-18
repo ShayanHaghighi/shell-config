@@ -1,11 +1,11 @@
 # Load plugins (guard against multiple sourcing)
 if [[ -z "$_zsh_autosuggestions_loaded" ]]; then
-    source "$HOME/dotfiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
+    source "$XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
     export _zsh_autosuggestions_loaded=1
 fi
 
 if [[ -z "$_zsh_syntax_highlighting_loaded" ]]; then
-    source "$HOME/dotfiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
     export _zsh_syntax_highlighting_loaded=1
 fi
 
@@ -33,7 +33,7 @@ export ZSH_HIGHLIGHT_STYLES=(
 )
 
 # too much for now, so disabling
-#source "$HOME/dotfiles/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+#source "$XDG_CONFIG_HOME/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 
 fpath=(path/to/zsh-completions/src $fpath)
 #rm -f "$ZDOTDIR/.zcompdump"; compinit
