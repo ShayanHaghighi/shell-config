@@ -3,36 +3,12 @@ palette = "catppuccin_mocha"
 
 
 format = """
-[ 󰏚 \
-$sudo\
-$username](fg:#090c0c bg:subtext1)\
+[ 󰏚 $sudo ](fg:#090c0c bg:subtext1)\
 []( fg:subtext1 bg:sea)\
 
 $directory\
 
 $character
-"""
-
-right_format="""
-([](fg:peach)
-$git_branch\
-([](fg:base bg:mantle)\
-
-$git_status\
-$git_metrics\
-$git_state)\
-[](fg:mantle))\
-
-
-([](fg:teal)
-$nodejs\
-$rust\
-$golang\
-$php\
-$python\
-[](fg:base))\
-
-
 """
 
 add_newline=false
@@ -98,7 +74,7 @@ modified='[M](fg:#f78e25 bg:mantle)'
 untracked='[U](fg:#ff836e bg:mantle)'
 staged='[S](fg:#9aff8f bg:mantle)'
 deleted='[X](fg:#d60924 bg:mantle)'
-format = '[($ahead_behind )](fg:#ffffff)[( $all_status )](fg:#769ff0 bg:mantle)'
+format = '[( $ahead_behind )](fg:#ffffff bg:mantle)[( $all_status )](fg:#769ff0 bg:mantle)'
 
 [git_metrics]
 added_style = "fg:bold green  bg:mantle"

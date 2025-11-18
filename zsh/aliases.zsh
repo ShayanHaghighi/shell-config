@@ -1,9 +1,9 @@
 # Aliases
 alias la='ls -a'
 alias l='ls'
-alias ls='eza --group-directories-last --sort=Extension -1'
+alias ls='eza --group-directories-first --sort=Extension -1'
 alias lt='eza -T -L 5 --git-ignore'
-alias ll='eza --group-directories-last -l --git --sort=modified'
+alias ll='eza --group-directories-first -l --git --sort=modified'
 
 alias cat='batcat'
 alias catp='batcat --paging=always'

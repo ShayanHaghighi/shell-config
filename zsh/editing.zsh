@@ -36,16 +36,20 @@ export ZSH_HIGHLIGHT_STYLES=(
 #source "$HOME/dotfiles/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 
 fpath=(path/to/zsh-completions/src $fpath)
-rm -f "$ZDOTDIR/.zcompdump"; compinit
+#rm -f "$ZDOTDIR/.zcompdump"; compinit
 
+eval "$(zoxide init zsh)"
 
 # fzf keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Carapace completion
-zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+#zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 zstyle ':completion:*' list-colors 'yes'
 zstyle ':completion:*' menu select
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' verbose yes
+
 source <(carapace _carapace)
 
 
