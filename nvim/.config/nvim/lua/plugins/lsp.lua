@@ -47,18 +47,11 @@ return {
             end
           end, { "i", "s" }),
 
-          -- Enter also confirms
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-          -- Navigation with arrow keys
           ["<Up>"] = cmp.mapping.select_prev_item(),
           ["<Down>"] = cmp.mapping.select_next_item(),
-
-          -- Optional: C-p / C-n as alternative navigation
           ["<C-p>"] = cmp.mapping.select_prev_item(),
           ["<C-n>"] = cmp.mapping.select_next_item(),
-
-          -- Manual completion trigger
           ["<C-Space>"] = cmp.mapping.complete(),
         },
         sources = cmp.config.sources({
@@ -116,7 +109,7 @@ return {
         pattern = { "lua", "javascript", "typescript", "python" },
         callback = function()
           local cfg = vim.lsp.config[vim.bo.filetype .. "_ls"]
-            or (vim.bo.filetype == "python" and vim.lsp.config.basedpyright)
+              or (vim.bo.filetype == "python" and vim.lsp.config.basedpyright)
           if cfg then
             vim.lsp.start(cfg)
           end

@@ -1,6 +1,4 @@
-return {
-  {
-    "mg979/vim-visual-multi",
+return { { "mg979/vim-visual-multi",
   },
   {
     "tpope/vim-surround",
@@ -15,14 +13,14 @@ return {
   },
   {
     "https://github.com/windwp/nvim-autopairs",
-    event = "InsertEnter", -- Only load when you enter Insert mode
+    event = "InsertEnter", 
     config = function()
       require("nvim-autopairs").setup()
     end,
   },
   {
     "https://github.com/tpope/vim-sleuth",
-    event = { "BufReadPost", "BufNewFile" }, -- Load after your file content
+    event = { "BufReadPost", "BufNewFile" },
   },
   {
     "https://github.com/farmergreg/vim-lastplace",

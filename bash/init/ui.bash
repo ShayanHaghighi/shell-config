@@ -3,7 +3,7 @@ CFG_DIR=/home/shayan/.config/
 
 # setup eza themes
 export EZA_ICONS_AUTO=always
-export EZA_CONFIG_DIR="$CFG_DIR/eza"
+#export EZA_CONFIG_DIR="$CFG_DIR/eza"
 
 # starship initialization
 eval "$(starship init bash)"

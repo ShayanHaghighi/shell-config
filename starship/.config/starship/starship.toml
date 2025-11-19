@@ -1,6 +1,4 @@
 palette = "catppuccin_mocha"
-#[░▒▓](subtext1)\
-
 
 format = """
 [ 󰏚 $sudo ](fg:#090c0c bg:subtext1)\
