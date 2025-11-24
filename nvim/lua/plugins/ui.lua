@@ -6,7 +6,6 @@ return {
       local function on_attach(bufnr)
         local api = require("nvim-tree.api")
 
-        -- default mappings
         api.config.mappings.default_on_attach(bufnr)
 
         -- TODO: fix
@@ -79,14 +78,14 @@ return {
   },
   {
     "nvim-tree/nvim-web-devicons",
-    lazy = false, -- load immediately so icons are available everywhere
+    lazy = false,
     priority = 1000,
     config = function()
       require("nvim-web-devicons").setup({
         override = {},
         color_icons = true,
-        default = true, -- show default icons for files with no specific icon
-        strict = true, -- match exact file extensions
+        default = true,
+        strict = true,
       })
     end,
   },
@@ -99,6 +98,16 @@ return {
   }, -- nvim status line
   {
     "catppuccin/nvim",
+    integrations = {
+      cmp = true,
+      gitsigns = true,
+      nvimtree = true,
+    },
+    flavor = "mocha",
+    float = {
+      transparent = true,
+    },
+    transparent_background = true,
     lazy = false,
     name = "catppuccin",
     priority = 1000,

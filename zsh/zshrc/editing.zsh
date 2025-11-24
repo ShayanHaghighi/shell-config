@@ -1,13 +1,14 @@
 # Load plugins (guard against multiple sourcing)
 if [[ -z "$_zsh_autosuggestions_loaded" ]]; then
     source "$XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-    export _zsh_autosuggestions_loaded=1
+     _zsh_autosuggestions_loaded=1
 fi
 
 if [[ -z "$_zsh_syntax_highlighting_loaded" ]]; then
     source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-    export _zsh_syntax_highlighting_loaded=1
+     _zsh_syntax_highlighting_loaded=1
 fi
+
 
 # zsh-syntax-highlighting styles
 export ZSH_HIGHLIGHT_STYLES=(
@@ -41,7 +42,7 @@ fpath=(path/to/zsh-completions/src $fpath)
 eval "$(zoxide init zsh)"
 
 # fzf keybindings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Carapace completion
 #zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
@@ -63,3 +64,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+setxkbmap -option caps:swapescape
+
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh

@@ -1,0 +1,20 @@
+command = /bin/zsh
+
+theme = catpuccin-mocha.conf
+
+cursor-style = block
+shell-integration-features = no-cursor
+
+background-image = ~/.config/ghostty/assets/background-blur.png
+background-image-opacity = 0.01
+background-image-fit = cover
+background-blur = 200
+background-opacity = 1.0
+
+keybind = ctrl+shift+K=text:clear\x0d
+keybind = ctrl+b=text:cd $(git rev-parse --show-toplevel)\x0d
+
+font-thicken = false
+font-family = "0xProto Nerd Font"
+
+

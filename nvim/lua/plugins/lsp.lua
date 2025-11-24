@@ -10,7 +10,9 @@ return {
       })
     end,
   },
-  { "neovim/nvim-lspconfig" },
+  {
+    "neovim/nvim-lspconfig",
+  },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -47,18 +49,11 @@ return {
             end
           end, { "i", "s" }),
 
-          -- Enter also confirms
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-          -- Navigation with arrow keys
           ["<Up>"] = cmp.mapping.select_prev_item(),
           ["<Down>"] = cmp.mapping.select_next_item(),
-
-          -- Optional: C-p / C-n as alternative navigation
           ["<C-p>"] = cmp.mapping.select_prev_item(),
           ["<C-n>"] = cmp.mapping.select_next_item(),
-
-          -- Manual completion trigger
           ["<C-Space>"] = cmp.mapping.complete(),
         },
         sources = cmp.config.sources({
@@ -116,7 +111,7 @@ return {
         pattern = { "lua", "javascript", "typescript", "python" },
         callback = function()
           local cfg = vim.lsp.config[vim.bo.filetype .. "_ls"]
-            or (vim.bo.filetype == "python" and vim.lsp.config.basedpyright)
+              or (vim.bo.filetype == "python" and vim.lsp.config.basedpyright)
           if cfg then
             vim.lsp.start(cfg)
           end
@@ -181,5 +176,42 @@ return {
         lsp_fallback = true,
       },
     },
+    {
+      "folke/trouble.nvim",
+      opts = {}, -- for default options, refer to the configuration section for custom setup.
+      cmd = "Trouble",
+      keys = {
+        {
+          "<leader>xx",
+          "<cmd>Trouble diagnostics toggle<cr>",
+          desc = "Diagnostics (Trouble)",
+        },
+        {
+          "<leader>xX",
+          "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+          desc = "Buffer Diagnostics (Trouble)",
+        },
+        {
+          "<leader>cs",
+          "<cmd>Trouble symbols toggle focus=false<cr>",
+          desc = "Symbols (Trouble)",
+        },
+        {
+          "<leader>cl",
+          "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+          desc = "LSP Definitions / references / ... (Trouble)",
+        },
+       {
+          "<leader>xL",
+          "<cmd>Trouble loclist toggle<cr>",
+          desc = "Location List (Trouble)",
+        },
+        {
+          "<leader>xQ",
+          "<cmd>Trouble qflist toggle<cr>",
+          desc = "Quickfix List (Trouble)",
+        },
+      },
+    }
   },
 }
