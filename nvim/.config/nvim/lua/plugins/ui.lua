@@ -98,6 +98,16 @@ return {
   }, -- nvim status line
   {
     "catppuccin/nvim",
+    integrations = {
+      cmp = true,
+      gitsigns = true,
+      nvimtree = true,
+    },
+    flavor = "mocha",
+    float = {
+      transparent = true,
+    },
+    transparent_background = true,
     lazy = false,
     name = "catppuccin",
     priority = 1000,

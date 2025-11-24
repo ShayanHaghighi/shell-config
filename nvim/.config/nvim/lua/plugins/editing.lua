@@ -1,5 +1,5 @@
 return { { "mg979/vim-visual-multi",
-  },
+},
   {
     "tpope/vim-surround",
   },
@@ -13,7 +13,7 @@ return { { "mg979/vim-visual-multi",
   },
   {
     "https://github.com/windwp/nvim-autopairs",
-    event = "InsertEnter", 
+    event = "InsertEnter",
     config = function()
       require("nvim-autopairs").setup()
     end,
@@ -25,5 +25,36 @@ return { { "mg979/vim-visual-multi",
   {
     "https://github.com/farmergreg/vim-lastplace",
     event = "BufReadPost",
+  },
+  {
+    "VonHeikemen/fine-cmdline.nvim",
+    dependencies = {
+      { 'MunifTanjim/nui.nvim' },  -- Required dependency
+    },
+    config = function ()
+      vim.api.nvim_set_keymap('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
+      vim.api.nvim_set_keymap('n', ':', '<cmd>FineCmdline<CR>', {noremap = true})
+      require("fine-cmdline").setup({cmdline = {
+    enable_keymaps = true,
+    smart_history = true,
+    prompt = '> '
+  },
+  popup = {
+    position = {
+      row = '10%',
+      col = '50%',
+    },
+    size = {
+      width = '60%',
+    },
+    border = {
+      style = 'double',
+            padding = {1,2},
+    },
+    win_options = {
+      winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
+    },
+  },})
+    end
   },
 }
