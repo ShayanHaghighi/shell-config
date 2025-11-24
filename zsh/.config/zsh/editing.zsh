@@ -1,15 +1,14 @@
 # Load plugins (guard against multiple sourcing)
 if [[ -z "$_zsh_autosuggestions_loaded" ]]; then
     source "$XDG_CONFIG_HOME/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh"
-    export _zsh_autosuggestions_loaded=1
+     _zsh_autosuggestions_loaded=1
 fi
 
 if [[ -z "$_zsh_syntax_highlighting_loaded" ]]; then
     source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-    export _zsh_syntax_highlighting_loaded=1
+     _zsh_syntax_highlighting_loaded=1
 fi
 
-echo  "export TERM=xterm-256color" >> ~/.zshrc
 
 # zsh-syntax-highlighting styles
 export ZSH_HIGHLIGHT_STYLES=(

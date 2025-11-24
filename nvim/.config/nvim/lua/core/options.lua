@@ -20,6 +20,12 @@ vim.diagnostic.config({
   update_in_insert = true
 })
 
+vim.filetype.add({
+  extension = {
+    ghostty = "cfg",
+  }
+})
+
 -- uncomment to make default background transparent
 -- vim.api.nvim_create_autocmd("ColorScheme", {
 --   callback = function()
