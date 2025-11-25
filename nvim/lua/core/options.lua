@@ -25,7 +25,11 @@ vim.filetype.add({
     ghostty = "cfg",
   }
 })
+vim.keymap.set('o', 'i/', ':<C-u>normal! T/vt/<CR>', { silent = true })
+vim.keymap.set('o', 'a/', ':<C-u>normal! F/vf/<CR>', { silent = true })
 
+vim.keymap.set('v', 'i/', ':<C-u>normal! T/vt/<CR>', { silent = true })
+vim.keymap.set('v', 'a/', ':<C-u>normal! F/vf/<CR>', { silent = true })
 -- uncomment to make default background transparent
 -- vim.api.nvim_create_autocmd("ColorScheme", {
 --   callback = function()

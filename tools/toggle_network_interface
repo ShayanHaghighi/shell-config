@@ -1,0 +1,9 @@
+#!/bin/bash
+
+ethernet_metric=$(nmcli device show  enp4s0 | grep -m 1 IP4.ROUTE |awk '/mt = / {print $NF}')
+
+if [[ $ethernet_metric == '100' ]]; then
+    nmcli device modify enp4s0 ipv4.route-metric 700
+else
+    nmcli device modify enp4s0 ipv4.route-metric 100
+fi

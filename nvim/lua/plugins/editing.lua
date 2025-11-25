@@ -29,7 +29,7 @@ return { { "mg979/vim-visual-multi",
   {
     "VonHeikemen/fine-cmdline.nvim",
     dependencies = {
-      { 'MunifTanjim/nui.nvim' },  -- Required dependency
+      { 'MunifTanjim/nui.nvim' },
     },
     config = function ()
       vim.api.nvim_set_keymap('n', '<CR>', '<cmd>FineCmdline<CR>', {noremap = true})
@@ -49,7 +49,7 @@ return { { "mg979/vim-visual-multi",
     },
     border = {
       style = 'double',
-            padding = {1,2},
+          padding = {0,1},
     },
     win_options = {
       winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',

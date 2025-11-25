@@ -27,6 +27,10 @@ vim.api.nvim_set_keymap(
   "<cmd>lua require('telescope.builtin').git_commits()<CR>",
   { noremap = true, silent = true }
 )
+vim.keymap.set("n","L","$")
+vim.keymap.set("n","H","_")
+vim.keymap.set("v","L","$")
+vim.keymap.set("v","H","_")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")

@@ -42,8 +42,11 @@ fpath=(path/to/zsh-completions/src $fpath)
 eval "$(zoxide init zsh)"
 
 # fzf keybindings
-#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+setopt inc_append_history
 # Carapace completion
 #zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 zstyle ':completion:*' list-colors 'yes'
@@ -64,7 +67,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+
 setxkbmap -option caps:swapescape
 
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+# source /usr/share/doc/fzf/examples/key-bindings.zsh
+# source /usr/share/doc/fzf/examples/completion.zsh
+
