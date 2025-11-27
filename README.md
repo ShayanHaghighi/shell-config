@@ -4,6 +4,12 @@ cd dotfiles
 stow -t=$HOME -Sv <packages>
 ```
 
+TODO:
+- fuzzy find cheat sheets by name
+- don't save cheat sheet if not found by cht.sh
+- make "root" note be stored in folder (as it might not be stored if folder exists)
+
+
 TODO: find way to manage these packages
 - stow (apt)
 - starship (curl install)

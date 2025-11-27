@@ -9,3 +9,4 @@ bindkey '^[[1;3C' end-of-line         # Alt-Right
 bindkey '^[[3;3~' kill-whole-line     # Alt-Delete
 # setxkbmap -option caps:swapescape
 
+setxkbmap -option caps:swapescape
