@@ -1,5 +1,41 @@
 return {
   {
+    "RRethy/base16-nvim",
+    lazy = false,
+    config = function ()
+      local base16 = require('base16-colorscheme')
+      base16.setup({
+
+        -- Start flavours
+base00 = '#1e1e2e',
+base01 = '#181825',
+base02 = '#313244',
+base03 = '#45475a',
+base04 = '#585b70',
+base05 = '#cdd6f4',
+base06 = '#f5e0dc',
+base07 = '#b4befe',
+base0F = '#f38ba8',
+base09 = '#fab387',
+base0A = '#f9e2af',
+base0B = '#a6e3a1',
+base0C = '#94e2d5',
+base0D = '#89b4fa',
+base0E = '#cba6f7',
+base08 = '#f2cdcd'
+        -- End flavours
+      })
+      base16.with_config({
+        telescope = true,
+        cmp = true,
+        lualine = true,
+        nvim_tree = true
+      })
+      --vim.cmd('colorscheme base16')
+
+    end
+  },
+  {
     "nvim-tree/nvim-tree.lua",
     config = function()
       local nvim_tree = require("nvim-tree")
@@ -11,7 +47,24 @@ return {
         -- TODO: fix
         vim.keymap.set("n", "<leader>t", api.tree.focus, { buffer = bufnr, desc = "Focus NvimTree" })
       end
+      local function link(from, to)
+        vim.api.nvim_set_hl(0, from, { link = to })
+      end
 
+      -- Inherit from standard groups
+      link("NvimTreeNormal", "Normal")
+      link("NvimTreeNormalNC", "Normal")
+      link("NvimTreeFolderName", "Directory")
+      link("NvimTreeFolderIcon", "Directory")
+      link("NvimTreeOpenedFolderName", "Directory")
+      link("NvimTreeEmptyFolderName", "Directory")
+      link("NvimTreeIndentMarker", "Comment")
+      link("NvimTreeRootFolder", "Title")
+      link("NvimTreeExecFile", "String")
+      link("NvimTreeSpecialFile", "Identifier")
+      link("NvimTreeGitStaged", "GitSignsStaged") -- if you use GitSigns
+      link("NvimTreeGitDirty", "GitSignsChange")
+      link("NvimTreeGitNew", "GitSignsAdd")
       nvim_tree.setup({
         on_attach = on_attach,
         update_cwd = true,
@@ -93,7 +146,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     config = function()
-      require("lualine").setup({ options = { theme = "auto" } })
+      require("lualine").setup({ options = { theme = "base16" } })
     end,
   }, -- nvim status line
   {
@@ -118,7 +171,7 @@ return {
   { -- bufferlines (tabs)
     "akinsho/bufferline.nvim",
     version = "*",
-    dependencies = "nvim-tree/nvim-web-devicons",
+    dependencies ={     "RRethy/base16-nvim", "nvim-tree/nvim-web-devicons" },
     config = function()
       require("bufferline").setup({
         options = {

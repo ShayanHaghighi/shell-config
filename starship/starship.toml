@@ -1,8 +1,8 @@
 palette = "catppuccin_mocha"
 
 format = """
-[ 󰏚 $sudo ](fg:#090c0c bg:subtext1)\
-[]( fg:subtext1 bg:sea)\
+[ 󰏚 $sudo ](fg:base bg:peach)\
+[]( fg:peach bg:mantle)\
 
 $directory\
 
@@ -12,48 +12,40 @@ right_format="([](fg:surface0)$python[](fg:surface0))"
 
 add_newline=false
 
+# Start flavours
 [palettes.catppuccin_mocha]
+base = "#1e1e2e"
+mantle = "#181825"
+surface0 = "#313244"
+surface1 = "#45475a"
+surface2 = "#585b70"
+text = "#cdd6f4"
 rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
+lavender = "#b4befe"
 red = "#f38ba8"
-maroon = "#eba0ac"
 peach = "#fab387"
 yellow = "#f9e2af"
 green = "#a6e3a1"
 teal = "#94e2d5"
-sea="#b0cbff"
-sky = "#89dceb"
-sapphire = "#74c7ec"
 blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#212736"
-mantle = "#181825"
-crust = "#11111b" 
+mauve = "#cba6f7"
+flamingo = "#f2cdcd"
+black = "#"
+# End flavours
 
 [character]
-success_symbol="[](fg:sea bg:green)[](fg:bold green)"
-error_symbol="[](fg:sea bg:red)[](fg:bold red)"
+success_symbol="[](fg:mantle bg:surface0)[](fg:surface0)"
+error_symbol="[](fg:mantle bg:red)[](fg:bold red)"
 format="$symbol "
 
 [sudo]
-style="fg:#090c0c bg:subtext1"
+style="fg:mantle bg:peach"
 disabled=false
 format='([$symbol]($style))'
 symbol=''
 
 [directory]
-style = "fg:#090c0c bg:sea"
+style = "fg:peach bg:mantle"
 format = "[ $path ]($style)"
 truncation_length = 2
 

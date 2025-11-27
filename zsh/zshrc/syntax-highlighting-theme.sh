@@ -1,0 +1,22 @@
+# zsh-syntax-highlighting styles
+export ZSH_HIGHLIGHT_STYLES=(
+  default                          'fg=#cdd6f4'
+  unknown-token                    'fg=#f38ba8'
+  reserved-word                    'fg=#cba6f7'
+  alias                            'fg=#f9e2af'
+  builtin                          'fg=#89b4fa'
+  function                         'fg=#89b4fa'
+  command                          'fg=#a6e3a1,bold'
+  precommand                       'fg=#a6e3a1,underline'
+  hashed-command                   'fg=#a6e3a1'
+  path                             'fg=#94e2d5'
+  globbing                         'fg=#f9e2af'
+  history-expansion                'fg=#fab387'
+  single-hyphen-option             'fg=#94e2d5'
+  double-hyphen-option             'fg=#94e2d5'
+  back-quoted-argument             'fg=#f38ba8'
+  single-quoted-argument           'fg=#f2cdcd'
+  double-quoted-argument           'fg=#f5e0dc'
+  dollar-quoted-argument           'fg=#f5e0dc'
+  assign                           'fg=#fab387'
+)
