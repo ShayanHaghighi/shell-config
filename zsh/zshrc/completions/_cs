@@ -1,0 +1,6 @@
+#compdef cs
+
+# Expand to files inside ~/dotfiles
+_arguments \
+  '*:cheatsheets:_path_files -W $XDG_CONFIG_HOME/cheat/cheatsheets/personal'
+

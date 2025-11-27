@@ -4,39 +4,12 @@ if [[ -z "$_zsh_autosuggestions_loaded" ]]; then
      _zsh_autosuggestions_loaded=1
 fi
 
-if [[ -z "$_zsh_syntax_highlighting_loaded" ]]; then
-    source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-     _zsh_syntax_highlighting_loaded=1
-fi
-
-
-# zsh-syntax-highlighting styles
-export ZSH_HIGHLIGHT_STYLES=(
-  default                          'fg=#CDD6F4'
-  unknown-token                    'fg=#F38BA8'
-  reserved-word                    'fg=#CBA6F7'
-  alias                            'fg=#F5C2E7'
-  builtin                          'fg=#89B4FA'
-  function                         'fg=#B4BEFE'
-  command                          'fg=#A6E3A1,bold'
-  precommand                       'fg=#A6E3A1,underline'
-  hashed-command                   'fg=#A6E3A1'
-  path                             'fg=#89DCEB'
-  globbing                         'fg=#F9E2AF'
-  history-expansion                'fg=#FAB387'
-  single-hyphen-option             'fg=#94E2D5'
-  double-hyphen-option             'fg=#94E2D5'
-  back-quoted-argument             'fg=#F38BA8'
-  single-quoted-argument           'fg=#F2CDCD'
-  double-quoted-argument           'fg=#F5E0DC'
-  dollar-quoted-argument           'fg=#F5E0DC'
-  assign                           'fg=#FAB387'
-)
+source "$XDG_CONFIG_HOME/zsh/syntax-highlighting-theme.sh"
 
 # too much for now, so disabling
 #source "$XDG_CONFIG_HOME/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
 
-fpath=(path/to/zsh-completions/src $fpath)
+fpath=($XDG_CONFIG_HOME/zsh/plugins/zsh-completions/ $fpath)
 #rm -f "$ZDOTDIR/.zcompdump"; compinit
 
 eval "$(zoxide init zsh)"
@@ -72,4 +45,11 @@ setxkbmap -option caps:swapescape
 
 # source /usr/share/doc/fzf/examples/key-bindings.zsh
 # source /usr/share/doc/fzf/examples/completion.zsh
+fpath=($XDG_CONFIG_HOME/zsh/completions $fpath)
+
+export PATH="$PATH:$HOME/.local/bin"
+if [[ -z "$_zsh_syntax_highlighting_loaded" ]]; then
+    source "$XDG_CONFIG_HOME/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+    _zsh_syntax_highlighting_loaded=1
+fi
 
