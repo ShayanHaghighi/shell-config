@@ -6,5 +6,5 @@ tmux=.config/tmux
 zsh/zshenv=
 zsh/zshrc=.config/zsh
 ghostty=.config/ghostty
-
-
+flavours=.config/flavours
+cheat=.config/cheat
