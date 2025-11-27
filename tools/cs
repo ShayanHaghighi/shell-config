@@ -1,18 +1,62 @@
 #!/bin/bash
-query="$1"
 NOTE_DIR="$XDG_CONFIG_HOME/cheat/cheatsheets/personal/"
-res=$(cheat $1)
 
-if [[ ! $? == 0 ]]; then
-    res=$(curl -s cht.sh/$1)
-clean_string=$(echo "$res" | sed 's/\x1b\[[0-9;]*m//g')
-    if [[ "$1" == */* ]]; then
-        mkdir -p "$NOTE_DIR/$(dirname "$1")"  
+# if [ -p /dev/stdin ]; then
+#     # Input is being piped in (e.g., cat file | ./script.sh)
+#     raw_input=$(cat)
+# else
+#     # Input is an argument (e.g., ./script.sh "string")
+#     raw_input="$1"
+# fi
+#
+# # Ensure we actually have input
+# if [ -z "$raw_input" ]; then
+#     echo "Error: No input provided."
+#     exit 1
+# fi
+#
+#
+is_response_ok(){
+    raw_response="$1"
+
+    cleaned_input="$(echo "$raw_response" | sed 's/\x1b\[[0-9;]*m//g')"
+
+    if [[ "$cleaned_input" == *"Invalid permissions string"* ]]; then
+        return
+    elif [[ "$cleaned_input" == *"404 NOT FOUND"* ]]; then
+        return
     fi
+    echo "response ok"
+}
 
-    printf "%s" "$res" > "$NOTE_DIR/$1"
-    res=$(printf "saved to dir: %s\n %s" "$1" "$res" )
-    echo "saved to dir: $1"
+query="$1"
+
+
+base_topic="$query"
+sub_topic=":root"
+if [[ "$1" == */* ]]; then
+    base_topic=$(dirname $query)
+    sub_topic=$(basename $query)
+elif [[ "$query" == *~* ]]; then
+    IFS='~' read -r base_topic sub_topic <<< "$query"
+fi
+
+
+
+res=$(cheat "$query")
+if [[ ! $? == 0 ]]; then
+
+    res=$(curl -s cht.sh/$query)
+    if [[ ! $(is_response_ok "$res") ]]; then
+        echo "not a valid cheat sheet"
+        exit 0
+    fi
+    # TODO - only make it doesnt exist
+    mkdir -p "$NOTE_DIR/$base_topic"  
+    file_path="$base_topic/$sub_topic"
+    printf "%s" "$res" > "$NOTE_DIR/$file_path"
+    res=$(printf "saved to dir: %s\n %s" "$file_path" "$res" )
+    echo "saved to dir: $file_path"
 fi
 
 printf "%s" "$res" | batcat -l markdown
