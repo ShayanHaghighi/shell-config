@@ -166,6 +166,8 @@ return {
         python = { "black" },
         bash = { "beautysh" },
         shell = { "beautysh" },
+        yaml = { "prettier" },
+        yml = { "prettier" },
         -- Conform will run multiple formatters sequentially
         --python = { "isort", "black" },
         -- Conform will run the first available formatter

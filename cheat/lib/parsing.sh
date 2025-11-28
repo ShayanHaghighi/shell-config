@@ -2,7 +2,6 @@
 is_response_ok(){
     raw_file="$1"
 
-    cleaned_input="$( cat $raw_file | sed 's/\x1b\[[0-9;]*m//g')"
     result=""
     #TODO replace with grep
     if [[ "$cleaned_input" == *"Invalid permissions string"* ]]; then
@@ -13,8 +12,6 @@ is_response_ok(){
         result="unknown"
     fi
     echo $result
-    echo $cleaned_input >> output.txt
-    echo "result: $result" >> output.txt
 }
 
 get_parts(){
