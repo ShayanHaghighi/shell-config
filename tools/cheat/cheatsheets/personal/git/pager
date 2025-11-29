@@ -1,3 +1,0 @@
-# Pager Config
-git config --global --replace-all core.pager 'less --mouse'
-#  Enables mouse scrolling within git pager output.

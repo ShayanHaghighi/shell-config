@@ -1,5 +1,0 @@
-# Server Config
-/etc/wireguard/wg0.conf
-
-# Client Exports
-/etc/wireguard/configs/

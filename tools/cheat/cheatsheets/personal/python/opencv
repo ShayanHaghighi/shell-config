@@ -1,3 +1,0 @@
-# Install OpenCV
-pip install opencv-python
-#  Pulls prebuilt wheels for desktops.
