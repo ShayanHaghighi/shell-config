@@ -1,16 +1,11 @@
 This repository contains all my dotfiles. These files can be installed using stow:
 ```shell
+git clone --recurse-submodules https://github.com/ShayanHaghighi/dotfiles.git
 cd dotfiles
-stow -t=$HOME -Sv <packages>
+./stow.sh
 ```
 
-TODO:
-- fuzzy find cheat sheets by name
-- don't save cheat sheet if not found by cht.sh
-- make "root" note be stored in folder (as it might not be stored if folder exists)
-
-
-# Installed packages:
+# Tools I Use:
 - stow (apt)
 - starship (curl install)
 - carapace (manual, but curl/apt exists)
@@ -23,3 +18,4 @@ TODO:
 - lazygit (manual for lower ubuntu versions)
 - xclip (apt)
 - zoxide (curl)
+- cheat (curl)
