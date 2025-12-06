@@ -15,10 +15,18 @@ get_language(){
     echo "${lang:-'bash'}"
 }
 export -f get_language
-while getopts "f" opt; do
+
+edit_mode="false"
+edit_path=""
+
+while getopts "fe:" opt; do
     case $opt in
         f)
             fuzzy_find="true"
+            ;;
+        e)
+            edit_mode="true"
+            edit_path="$OPTARG"
             ;;
         \?)
             echo "Invalid option"
@@ -28,6 +36,16 @@ while getopts "f" opt; do
 done
 
 shift $((OPTIND - 1))
+
+if [[ "$edit_mode" == "true" ]]; then
+    target_file="/home/shayan/.config/cheat/cheatsheets/personal/$edit_path"
+
+    target_dir=$(dirname "$target_file")
+    mkdir -p "$target_dir"
+
+    ${EDITOR:-nvim} "$target_file"
+    exit 0
+fi
 
 tmp=$(mktemp)
 trap 'rm -f "$tmp"' EXIT
@@ -67,7 +85,6 @@ if ! cheat "$note_path" > "$tmp" 2> /dev/null; then
             ;;
     esac
 
-        # TODO - only make if it doesnt exist
         dir="$NOTE_DIR/$base_topic"  
         abs_file_path="$dir/$sub_topic"
         mkdir -p "$dir"  
@@ -84,4 +101,3 @@ else
 fi
 
 
-#tmux neww bash -c "curl -s cht.sh/$query  | batcat -l markdown -p --paging never & while [ : ]; do sleep 1; done"
