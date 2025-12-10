@@ -19,3 +19,7 @@ cd dotfiles
 - xclip (apt)
 - zoxide (curl)
 - cheat (curl)
+- tree-sitter-cli (npm)
+- latexmk
+- lualatex
+- pandoc
