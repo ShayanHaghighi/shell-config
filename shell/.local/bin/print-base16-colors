@@ -1,0 +1,8 @@
+#!/bin/bash
+for i in {30..37}; do
+    printf "\e[%sm Color %s \e[0m\n" "$i" "$i"
+done
+
+for i in {90..97}; do
+    printf "\e[%sm Bright %s \e[0m\n" "$i" "$i"
+done
