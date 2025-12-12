@@ -1,0 +1,55 @@
+# TODO: get this to work
+name: flavours
+description: "A simple way to manage and use base16 standard schemes and templates"
+persistentflags:
+  - -h, --help: bool
+  - -V, --version: bool
+flags:
+  - -c, --config: ["file"]
+  - -d, --directory: ["dir"]
+  - -v, --verbose: bool
+completion:
+  flag:
+    config: ["$files"]
+    directory: ["$directories"]
+# commands:
+#   - name: apply
+#     description: "Applies scheme, according to user configuration"
+#     completion:
+#       positional:
+#         # apply may take optional scheme name
+#         - ["$list(", "SCHEME\tscheme name"]
+#   - name: build
+#     description: "Builds a template with given scheme, outputs to stdout"
+#     flags:
+#       - --template: ["file"] # guessed flag: template file?
+#     completion:
+#       positional:
+#         - ["$list(", "SCHEME\tscheme name"]
+#   - name: current
+#     description: "Prints last applied scheme name"
+#   - name: generate
+#     description: "Generates a scheme based on an image"
+#     flags:
+#       - -i, --image: ["file"] # guessed flag for input image
+#     completion:
+#       positional:
+#         - ["$files"]
+#   - name: info
+#     description: "Shows scheme colors for all schemes matching pattern"
+#     flags:
+#       - --truecolor: bool
+#     completion:
+#       positional:
+#         - ["$list(,)", "PATTERN\tscheme match pattern"]
+#   - name: list
+#     description: "Prints a list with all matching schemes"
+#     completion:
+#       positional:
+#         - ["$list(,)", "PATTERN\tscheme match pattern"]
+#   - name: update
+#     description: >-
+#       Downloads schemes, templates, or updates their lists (from repos specified
+#       in sources.yml)
+#     flags:
+#       - --sources: ["file"] # guessed flag: override sources

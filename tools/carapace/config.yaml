@@ -1,0 +1,7 @@
+style:
+  flag: "fg:#FF00FF"          # HOT PINK
+  flagPrefix: "fg:#00FFFF"    # CYAN
+  positional: "fg:#FFFF00"    # BRIGHT YELLOW
+  completion: "fg:#00FF00"    # NEON GREEN
+  selection: "bg:#0000FF,fg:#FFFFFF"  # BLUE BG + WHITE FG
+  breadcrumb: "fg:#FF8800"    # ORANGE

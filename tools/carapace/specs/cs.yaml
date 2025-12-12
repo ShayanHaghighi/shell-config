@@ -1,0 +1,8 @@
+# /carapace/overlays/doctl.yaml
+name: cs
+flags:
+  -e: Create/Edit cheat sheet
+  -f: fuzzy search through cheat sheets
+completion:
+  positionalany: ["$(cs -l)"]
+ 
