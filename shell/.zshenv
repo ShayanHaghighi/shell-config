@@ -4,8 +4,9 @@
 skip_global_compinit=1
 # Default Programs
 export VISUAL=nvim
+export EDITOR=nvim
 export BROWSER="firefox"
-
+export GIT_EDITOR=nvim
 
 export PATH=/opt/cmake/bin:$PATH
 export PATH=$PATH:"/usr/local/go/bin"
