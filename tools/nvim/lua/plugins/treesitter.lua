@@ -49,8 +49,4 @@ return {
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
-  {
-    "HiPhish/rainbow-delimiters.nvim",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-  },
 }

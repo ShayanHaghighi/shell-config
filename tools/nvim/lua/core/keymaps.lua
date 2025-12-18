@@ -12,7 +12,7 @@ map("n", "<C-u>", "<C-u>zz", { noremap = true })
 
 -- SPLITS N TABS
 
-map("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file tree" })
+map("n", "<leader>e", ":Oil<CR>", { desc = "Toggle file tree" })
 
 map("n", "<C-t>", ":tabnew<CR>", { desc = "New Tab" })
 map("n", "<C-s>", ":w<CR>", { desc = "Save" })
@@ -61,6 +61,7 @@ map("n", "<Leader>tg", function()
 end, { desc = "Toggle harper_ls" })
 
 map("n", "<leader>m", ":Mason<CR>", { desc = "Open Mason" })
+map("n", "<leader>l", ":Lazy<CR>", { desc = "Open Lazy" })
 
 map("n", "<leader>td", function()
   local current = vim.diagnostic.is_enabled()
