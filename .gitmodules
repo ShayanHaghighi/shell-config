@@ -4,6 +4,3 @@
 [submodule "shell/.config/zsh/plugins/zsh-autocomplete"]
 	path = shell/.config/zsh/plugins/zsh-autocomplete
 	url = https://github.com/marlonrichert/zsh-autocomplete.git
-[submodule "shell/.config/zsh/plugins/zsh-completions"]
-	path = shell/.config/zsh/plugins/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions.git
