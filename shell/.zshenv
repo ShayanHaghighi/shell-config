@@ -28,3 +28,7 @@ export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=1
 export PATH="$PATH:/home/shayan/.cargo/bin"
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64/"
+export PATH="$PATH:$HOME/.rubies/ruby-3.2.9/bin"
+
+setxkbmap -option caps:swapescape

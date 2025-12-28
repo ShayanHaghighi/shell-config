@@ -23,6 +23,10 @@ alias bat="batcat"
 
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+alias ud="agevault diary unlock && nvim diary"
+alias lockd="agevault diary lock"
+
+
 
 # dircolors for ls/grep
 if [ -x /usr/bin/dircolors ]; then
