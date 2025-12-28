@@ -13,15 +13,20 @@ lt(){
     depth=15
     other_args=""
     if [[ $1 =~ $re ]] ; then
-        depth=$1
+        depth=$@
     else
-        other_args=$1
+        other_args=$@
     fi
 
     eval "eza -T -L $depth --color=always --icons=always --git-ignore  $other_args | batcat"
 }
+
 ltl(){
     lt "-l"
+}
+
+bdiff(){
+    git diff $1 | batcat -l diff --theme base16
 }
 
 function y() {
