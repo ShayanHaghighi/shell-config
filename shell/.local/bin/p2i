@@ -1,0 +1,9 @@
+#!/bin/bash
+
+FILE_PATH="$1"
+PAGE="$2"
+FILE_NAME=$(basename "$1" .pdf)
+
+
+echo "pdftoppm -png -f $PAGE -l $PAGE $FILE_PATH $FILE_NAME" >  /home/shayan/work/uni-work/crypto/ahh.txt
+pdftoppm -png -f "$PAGE" -l "$PAGE" "$FILE_PATH" "$FILE_NAME"

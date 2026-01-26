@@ -8,14 +8,12 @@ export EDITOR=nvim
 export BROWSER="firefox"
 export GIT_EDITOR=nvim
 
-export PATH=/opt/cmake/bin:$PATH
-export PATH=$PATH:"/usr/local/go/bin"
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+export XDG_CONFIG_HOME="$HOME/.config/"
+export XDG_PICTURES_DIR="$HOME/media/Pictures/Screenshots/"
 
 export VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json
 export NVM_DIR="$HOME/.nvm"
 
-export XDG_CONFIG_HOME="$HOME/.config/"
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh/"
 export TMUX_CONF="$XDG_CONFIG_HOME/tmux/tmux.conf"
 
@@ -27,8 +25,5 @@ export CHEAT_CONFIG_PATH="$XDG_CONFIG_HOME/cheat/conf.yml"
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense'
 export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=1
-export PATH="$PATH:/home/shayan/.cargo/bin"
 export JAVA_HOME="/usr/lib/jvm/java-21-openjdk-amd64/"
-export PATH="$PATH:$HOME/.rubies/ruby-3.2.9/bin"
 
-setxkbmap -option caps:swapescape

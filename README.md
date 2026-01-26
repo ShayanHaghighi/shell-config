@@ -18,6 +18,7 @@ cd dotfiles
 | starship |curl install|
 | carapace |manual, but curl/apt exists|
 | nvim |manual (binary)|
+| batman | manual |
 | tpm |command install|
 | gitmux |manual/go|
 | lazygit |manual for lower ubuntu versions|

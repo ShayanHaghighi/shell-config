@@ -12,4 +12,5 @@ set incremental-search true
 map <C-i> zoom in
 map <C-o> zoom out
 
-
+map U exec 'touch abc'
+map P feedkeys ":exec p2i $FILE $PAGE<Return>"

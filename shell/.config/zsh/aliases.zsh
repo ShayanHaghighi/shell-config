@@ -5,6 +5,7 @@ alias python=python3
 alias fd="fdfind"
 alias bat="batcat"
 alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # Quick opening of tools
 alias webstorm='gtk-launch webstorm.desktop'

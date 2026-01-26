@@ -1,0 +1,18 @@
+# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
+name: protonvpn
+description: my command
+persistentflags:
+  -h, --help: show help
+completion:
+commands:
+  - name: signin
+    description: Sign in with Proton VPN credentials
+    completion:
+  - name: signout
+    description: Disconnect and remove credentials
+  - name: info
+    description: Display your Proton VPN account information
+  - name: connect
+    description: Connect to Proton VPN
+  - name: disconnect
+    description: Disconnect from Proton VPN

@@ -1,0 +1,9 @@
+filenames:
+  # Just change the icon glyph
+  dotfiles: { icon: { glyph:  } }
+  media: { icon: { glyph: 󰃽 } }
+  notes: { icon: { glyph: 󰠮 } }
+  projects: { icon: { glyph: 󱃖 } }
+  tools: { icon: { glyph: 󱧼 } } #󱌣
+  records: { icon: { glyph:  } }
+  work: { icon: { glyph:  } }

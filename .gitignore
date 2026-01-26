@@ -2,3 +2,4 @@ system.bash
 .zcompdump
 tmux/plugins/*
 tools/tmux/plugins
+.zsh_history
